@@ -35,7 +35,7 @@ struct SBCloseOrderSUI: View {
     
     
     @State private var isShowingAlert = false
-
+    
     
     
     var body: some View {
@@ -44,7 +44,7 @@ struct SBCloseOrderSUI: View {
             ScrollView {
                 VStack {
                     
-                    // MARK: - 1
+                    // MARK: - 1 Total payment and tax
                     
                     HStack {
                         Text("Total")
@@ -61,15 +61,7 @@ struct SBCloseOrderSUI: View {
                     }
                     Spacer().frame(height: 20)
                     
-                    // MARK: - 2
-                    
-                    //                    Text("Discount")
-                    //                    HStack {
-                    //                        TextField("By Percentage", text: $dByPercentageText)
-                    //                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    //                        TextField("By Amount", text: $dByAmountText)
-                    //                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    //                    }
+                    // MARK: - 2 Discount
                     
                     VStack {
                         Text("Discount Type")
@@ -95,7 +87,7 @@ struct SBCloseOrderSUI: View {
                     }
                     Spacer().frame(height: 20)
                     
-                    // MARK: - 3
+                    // MARK: - 3 Payment type
                     VStack {
                         Text("Payment Type")
                         Picker(selection: $paymentTypeSegment, label: Text("Payment Method")) {
@@ -111,8 +103,8 @@ struct SBCloseOrderSUI: View {
                         }
                     }
                     Spacer().frame(height: 20)
-
-                    // MARK: - 4
+                    
+                    // MARK: - 4 Tab amount
                     VStack {
                         HStack {
                             Text("Tab Amount:")
@@ -124,12 +116,8 @@ struct SBCloseOrderSUI: View {
                         }
                         Spacer().frame(height: 20)
                     }
-
                     
-
-
-                    
-                    // MARK: - 5
+                    // MARK: - 5 Split
                     
                     VStack {
                         Toggle("Split", isOn: $isToggled)
@@ -198,27 +186,24 @@ struct SBCloseOrderSUI: View {
                                 printBill()
                             } label: {
                                 Rectangle()
-                                          .frame(width: 300, height: 50)
-                                          .foregroundColor(Color.green)
-                                          .overlay(Text("Print Bill").foregroundColor(Color.white))
-                                          .cornerRadius(5)
+                                    .frame(width: 300, height: 50)
+                                    .foregroundColor(Color.green)
+                                    .overlay(Text("Print Bill").foregroundColor(Color.white))
+                                    .cornerRadius(5)
                             }
                             .alert(isPresented: $isShowingAlert) {
-                                        Alert(
-                                            title: Text("Alert"),
-                                            message: Text("Payment not done"),
-                                            primaryButton: .default(Text("OK")) {
-                                                print("OK button tapped")
-                                            },
-                                            secondaryButton: .cancel()
-                                        )
-                                    }
+                                Alert(
+                                    title: Text("Alert"),
+                                    message: Text("Payment not done"),
+                                    primaryButton: .default(Text("OK")) {
+                                        print("OK button tapped")
+                                    },
+                                    secondaryButton: .cancel()
+                                )
+                            }
                         }
                     }
                     
-                    // MARK: - 6
-                    
-
                 }
                 .padding()
                 .onChange(of: paymentTypeSegment) { newValue in
@@ -241,11 +226,6 @@ struct SBCloseOrderSUI: View {
         }
     }
     
-    func discountTypeControl(typeInt: Int)
-    {
-        
-    }
-    
     func keyboardDidHide() {
         finalPaymentCalculation()
     }
@@ -259,51 +239,15 @@ struct SBCloseOrderSUI: View {
         } else {
             SBBillingCalculationHandler.printInvoice(invoiceDataModel: viewModel.invoiceDataModel)
         }
-
     }
     
     func addValueToElements()
     {
-        /*
-         @State private var totalText = ""
-         @State private var taxText = ""
-         
-         @State private var dByPercentageText = ""
-         @State private var dByAmountText = ""
-         
-         @State private var selectedSegment = 0
-         
-         @State private var tabAmountTxt = ""
-         
-         @State private var isToggled = false
-         @State private var splitCountText = ""
-         @State private var splitPerShareText = ""
-         
-         @State private var finalPaymentText = ""
-         
-         @State private var paidAmtText = ""
-         @State private var returnedAmtText = ""
-         @State private var remainingAmtText = ""
-         
-         */
-        
         totalText = "\(staticCurrentType)\(viewModel.invoiceDataModel.billTotal ?? 0.0)"
-        
-        
-        
-        
     }
     
     func finalPaymentCalculation()
     {
-        
-        /*
-         let floatValue: Float = 12.34567
-         let doubleValue: Double = 98.7654321
-         
-         let formattedFloat = String(format: "%.2f", floatValue)
-         let formattedDouble = String(format: "%.2f", doubleValue)
-         */
         
         var finalPaymentAmount : Float = 0.0
         
@@ -379,38 +323,6 @@ struct SBCloseOrderSUI: View {
     func formatDecimalToString(_ value: Float) -> String {
         return String(format: "%.\(2)f", value)
     }
-    
-    
-    
-    //    var finalPayment: Double {
-    //
-    //        // Calculate the final payment based on your business logic
-    //           var payment = Double(totalText) + (Double(totalText) * taxText / 100) // Calculate tax
-    //
-    //        if discountType == 0 {
-    //
-    //        } else {
-    //
-    //        }
-    //
-    //        if discountByPercentage > 0 {
-    //               payment -= (payment * discountByPercentage / 100) // Apply discount by percentage
-    //           }
-    //           if discountByAmount > 0 {
-    //               payment -= discountByAmount // Apply discount by amount
-    //           }
-    //           if tabAmount > 0 {
-    //               payment += tabAmount // Add tab amount
-    //           }
-    //
-    //           if isSplitEnabled {
-    //               payment /= Double(splitCount)
-    //           }
-    //
-    //           // Here you can apply more logic based on the selected payment method (selectedSegment)
-    //           return payment
-    //       }
-    
     
 }
 
