@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="74" id="KGk-i7-Jjw" customClass="SBItemTableViewCell" customModule="SharkBilling" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSp-sE-KWj">
+                        <rect key="frame" x="5" y="5" width="310" height="64"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C4H-5l-84q">
+                                <rect key="frame" x="0.0" y="0.0" width="165" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tea" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjY-7d-HoD">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="28.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 10.0 * 5 = 50.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe0-bo-ogN">
+                                        <rect key="frame" x="0.0" y="33.333333333333336" width="165" height="30.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EE7-hC-Gyq">
+                                <rect key="frame" x="175" y="15.000000000000004" width="130" height="34.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8o-Hh-gGs">
+                                        <rect key="frame" x="0.0" y="0.0" width="32.666666666666664" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="controlBtnActions:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="u1p-xL-bK9"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxm-Lp-fed">
+                                        <rect key="frame" x="32.666666666666657" y="0.0" width="32.333333333333343" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwF-OV-km4">
+                                        <rect key="frame" x="65" y="0.0" width="32.666666666666657" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="controlBtnActions:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FJY-0h-P5w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkt-ia-Vhc">
+                                        <rect key="frame" x="97.666666666666686" y="0.0" width="32.333333333333343" height="34.333333333333336"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark.bin.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="controlBtnActions:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VhN-C8-Gpd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="7OF-RO-0gp"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="C4H-5l-84q" secondAttribute="bottom" id="2Yd-to-oRf"/>
+                            <constraint firstItem="EE7-hC-Gyq" firstAttribute="centerY" secondItem="xSp-sE-KWj" secondAttribute="centerY" id="6O7-xa-CX1"/>
+                            <constraint firstItem="C4H-5l-84q" firstAttribute="leading" secondItem="xSp-sE-KWj" secondAttribute="leading" id="REo-hZ-f9P"/>
+                            <constraint firstItem="C4H-5l-84q" firstAttribute="top" secondItem="xSp-sE-KWj" secondAttribute="top" id="hP4-Iz-I4N"/>
+                            <constraint firstAttribute="trailing" secondItem="EE7-hC-Gyq" secondAttribute="trailing" constant="5" id="ke7-NO-AJZ"/>
+                            <constraint firstItem="EE7-hC-Gyq" firstAttribute="leading" secondItem="C4H-5l-84q" secondAttribute="trailing" constant="10" id="vns-PG-xhw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xSp-sE-KWj" secondAttribute="trailing" constant="5" id="87S-rP-oHY"/>
+                    <constraint firstItem="xSp-sE-KWj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ITo-tg-Pu0"/>
+                    <constraint firstItem="xSp-sE-KWj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="WAw-Qi-gVc"/>
+                    <constraint firstAttribute="bottom" secondItem="xSp-sE-KWj" secondAttribute="bottom" constant="5" id="c4G-yS-FEx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="baseView" destination="xSp-sE-KWj" id="BbQ-HA-T9H"/>
+                <outlet property="countTxtFld" destination="oxm-Lp-fed" id="4co-SQ-lnS"/>
+                <outlet property="deleteBtn" destination="kkt-ia-Vhc" id="ROJ-DQ-dc9"/>
+                <outlet property="minusBtn" destination="J8o-Hh-gGs" id="E4E-rO-MY8"/>
+                <outlet property="plusBtn" destination="mwF-OV-km4" id="Sn3-ua-oIc"/>
+                <outlet property="priceLbl" destination="Oe0-bo-ogN" id="7Tj-qM-0sG"/>
+                <outlet property="titleLbl" destination="HjY-7d-HoD" id="58h-xF-YRw"/>
+            </connections>
+            <point key="canvasLocation" x="33.587786259541986" y="30.281690140845072"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark.bin.fill" catalog="system" width="128" height="92"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
